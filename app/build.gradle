@@ -48,4 +48,7 @@ dependencies {
 
     // Spalsh Screen AOU 대응
     implementation 'androidx.core:core-splashscreen:1.0.0-alpha01'
+
+    // 위치 정보
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
 }
