@@ -5,10 +5,13 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.naver.maps.geometry.LatLng;
+import com.naver.maps.geometry.LatLngBounds;
 import com.naver.maps.map.LocationTrackingMode;
 import com.naver.maps.map.MapView;
 import com.naver.maps.map.NaverMap;
@@ -75,14 +78,34 @@ public class NaverMapFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(@NonNull NaverMap naverMap) {
         this.naverMap = naverMap;
+
         naverMap.setLocationSource(locationSource);
         naverMap.setLocationTrackingMode(LocationTrackingMode.Follow);
 
+        cameraSetting();
         uiSetting();
     }
 
+    private void cameraSetting() {
+        naverMap.setExtent(new LatLngBounds(new LatLng(31.43, 122.37), new LatLng(44.35, 132)));
+        naverMap.setMinZoom(6.0);
+        naverMap.setMaxZoom(18.0);
+
+        
+        // 카메라 이동 이벤트
+        naverMap.addOnCameraChangeListener((reason, animated) -> {
+            Log.i("NaverMap", "카메라 변경 - reson: " + reason + ", animated: " + animated);
+
+        });
+        
+        // 카메라 대기 이벤트
+        naverMap.addOnCameraIdleListener(() -> {
+            Log.i("Camera L", "카메라 좌표" + Double.toString(naverMap.getCameraPosition().target.latitude)+ ", " + Double.toString(naverMap.getCameraPosition().target.longitude));
+        });
+    }
+
+    // UI 컨트롤 재배치
     private void uiSetting() {
-        // UI 컨트롤 재배치
         UiSettings uiSettings = naverMap.getUiSettings();
         uiSettings.setCompassEnabled(false); // 기본값 : true
         uiSettings.setScaleBarEnabled(false); // 기본값 : true
