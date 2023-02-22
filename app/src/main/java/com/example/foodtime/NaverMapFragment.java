@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.naver.maps.geometry.LatLng;
 import com.naver.maps.geometry.LatLngBounds;
@@ -18,6 +19,7 @@ import com.naver.maps.map.NaverMap;
 import com.naver.maps.map.OnMapReadyCallback;
 import com.naver.maps.map.UiSettings;
 import com.naver.maps.map.util.FusedLocationSource;
+import com.naver.maps.map.widget.LocationButtonView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -110,7 +112,8 @@ public class NaverMapFragment extends Fragment implements OnMapReadyCallback {
         uiSettings.setCompassEnabled(false); // 기본값 : true
         uiSettings.setScaleBarEnabled(false); // 기본값 : true
         uiSettings.setZoomControlEnabled(false); // 기본값 : true
-        uiSettings.setLocationButtonEnabled(true); // 기본값 : false
+        uiSettings.setLocationButtonEnabled(false); // 기본값 : false
+
     }
 
     @Override

@@ -51,4 +51,7 @@ dependencies {
 
     // 위치 정보
     implementation 'com.google.android.gms:play-services-location:16.0.0'
+
+    // Slidinguppanel
+    implementation 'com.sothree.slidinguppanel:library:3.4.0'
 }
