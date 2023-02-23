@@ -29,16 +29,18 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/movieName"
+                android:id="@+id/storeName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 android:text="TextView" />
 
             <TextView
-                android:id="@+id/grade"
+                android:id="@+id/distance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:layout_margin="5dp"
                 android:text="TextView" />
         </LinearLayout>
     </LinearLayout>

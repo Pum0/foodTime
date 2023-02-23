@@ -10,16 +10,30 @@
     android:gravity="bottom"
     app:umanoDragView="@id/drawer"
     app:umanoOverlay="true"
-    app:umanoPanelHeight="120dp"
+    app:umanoPanelHeight="25dp"
     app:umanoShadowHeight="0dp"
     tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main_container"
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/yellow">
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/layout_round"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal|bottom"></LinearLayout>
+    </FrameLayout>
+
 
     <LinearLayout
         android:id="@+id/drawer"
@@ -29,20 +43,23 @@
 
         <View
             android:id="@+id/swipe"
-            android:background="@color/white"
             android:layout_width="60dp"
             android:layout_height="5dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:layout_gravity="center_horizontal"/>
+            android:background="@color/white" />
 
         <ListView
             android:id="@+id/listView"
-            android:background="@drawable/layout_round"
             android:layout_width="match_parent"
             android:layout_height="600dp"
-            android:dividerHeight="5dp"
-            android:divider="#ffffff">
+            android:background="@drawable/layout_round"
+            android:divider="@color/white"
+            android:dividerHeight="10dp"
+            android:paddingStart="5dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="5dp">
 
         </ListView>
     </LinearLayout>

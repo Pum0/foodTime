@@ -44,8 +44,8 @@ public class MyAdapter extends BaseAdapter {
         View view = mLayoutInflater.inflate(R.layout.list_view, null);
 
         ImageView imageView = (ImageView)view.findViewById(R.id.poster);
-        TextView storeName = (TextView)view.findViewById(R.id.movieName);
-        TextView distance = (TextView)view.findViewById(R.id.grade);
+        TextView storeName = (TextView)view.findViewById(R.id.storeName);
+        TextView distance = (TextView)view.findViewById(R.id.distance);
 
         imageView.setImageResource(listData.get(position).getPoster());
         storeName.setText(listData.get(position).getStoreName());

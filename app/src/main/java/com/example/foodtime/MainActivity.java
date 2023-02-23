@@ -3,6 +3,7 @@ package com.example.foodtime;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.view.DragEvent;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -33,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         NaverMapFragment naverFragment = new NaverMapFragment();
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.main_container, naverFragment).commit();
-
 
         slidingUpPanelLayout = findViewById(R.id.main_panel);
 
